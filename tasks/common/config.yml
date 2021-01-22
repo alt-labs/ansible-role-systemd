@@ -23,7 +23,7 @@
     owner: "root"
     group: "root"
     mode: 0644
-    backup: true
+    backup: "{{ unit_item.backup|default(_default_unit_backup) }}"
   vars:
     config: "{{ unit_item }}"
   register: "restart_units"
@@ -45,7 +45,7 @@
     owner: "root"
     group: "root"
     mode: 0644
-    backup: true
+    backup: "{{ unit_item.backup|default(_default_unit_backup) }}"
   vars:
     config: "{{ unit_item }}"
   register: "restart_override_units"
