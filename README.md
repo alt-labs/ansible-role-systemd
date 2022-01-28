@@ -49,6 +49,9 @@ Variables are available and organized according to the following software & mach
 `[unit_config: <config-list-entry>:] path:` (**default**: <string> `/etc/systemd/system`)
 - load path to systemd unit configuration.
 
+`[unit_config: <config-list-entry>:] backup:` (**default**: <string> `true`)
+- backup systemd unit before atempting to modify.
+
   In addition to /etc/systemd/system (*default*), unit configs and associated drop-in ".d" directory overrides for system services can be placed in `/usr/lib/systemd/system` or `/run/systemd/system` directories.
 
   Files in **/etc** take precedence over those in **/run** which in turn take precedence over those in **/usr/lib**. Drop-in files under any of these directories take precedence over unit files wherever located. Multiple drop-in files with different names are applied in lexicographic order, regardless of which of the directories they reside in. See table below and consult **systemd(1)** for additional details regarding path load priority.
